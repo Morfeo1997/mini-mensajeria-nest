@@ -1,1 +1,14 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme{
+
+	--font-family-rye: 'family rye', cursive;
+	--font-vt-323: 'vt323', cursive;
+	--font-ribeye-marrow: 'ribeye marrow', cursive;
+}

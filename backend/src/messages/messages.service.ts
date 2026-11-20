@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateMessageDto } from './create-message.dto';
 
 @Injectable()
 export class MessagesService {
@@ -17,6 +18,17 @@ export class MessagesService {
       createdAt: new Date(),
     },
   ];
+  
+  create(dto: CreateMessageDto): Message {
+    const newMessage: Message = {
+      id: crypto.randomUUID(),
+      username: dto.username.trim(),
+      content: dto.content.trim(),
+      createdAt: new Date(),
+    };
+    
+    this.messages.push(newMessage);
+  }
 
   findAll() {
     return this.messages;
